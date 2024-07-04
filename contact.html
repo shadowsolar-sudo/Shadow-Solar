@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadowSolar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <!-- Přidání Google Fonty -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="scripts/sidebar-activite.js"></script>
+</head>
+<body>
+
+
+    <div class="sidebar">
+        <nav>
+            <a href="index.html" id="home">Domov</a>
+            <a href="projects.html" id="projects">Projekty</a>
+            <a href="contact.html" id="contact">Kontakt</a>
+        </nav>
+        <p>&copy; 2024 <a class="tooltip" href="https://discord.com/users/797019251336675369" target="_blank">shadowsolar_.#0000
+            <span class="tooltiptext">Tohle je link na discord profile</span>
+        </a></p>
+    </div>
+
+
+    <div class="content">
+    <header>
+        <div class="container">
+            <h1>Kontakt</h1>
+        </div>
+    </header>
+    <main>
+
+        <section id="contact">
+            <h2>Kde mě můžete kontaktovat</h2>
+            <p><a class="linkos-hw-contact" href="https://dsc.gg/hustleworld">hustle World</a></p>
+            <img src="img/hustle_world_gif.gif" alt="HW">
+        </section>
+    </main>
+    
+    <br>
+      <section id="h2-contact">
+        <h2 id="h2-contact" class="tooltip"><a href="">Nebo odešlete formulář</a>
+            <span class="tooltiptext">Discord nick přesně nebo email/instagram</span>
+        </h2>
+      </section>
+    <br>
+    
+    <div class="container-form">
+        <h1>Odeslat zprávu na Discord</h1>
+        <form id="discordForm">
+            <label for="name">Jméno:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="message">Zpráva:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Odeslat</button>
+        </form>
+        <script src="scripts/discordform.js"></script>
+    </div> 
+    <footer>
+        <!--<div class="content">
+        <p>&copy; 2024 <a class="tooltip" href="https://discord.com/users/797019251336675369" target="_blank">shadowsolar_.#0000
+            <span class="tooltiptext">Tohle je link na discord profile</span>
+        </a></p>
+        </div>-->
+    </footer>
+    </div>
+</body>
+</html>
