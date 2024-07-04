@@ -73,16 +73,11 @@ section p, section ul {
 }
 
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-}
-
-footer p {
-    margin: 0;
+    color: white;
+    a {
+        color: aqua;
+    }
 }
 
 @media (max-width: 600px) {
@@ -91,8 +86,9 @@ footer p {
         gap: 10px;
     }
 
-    main {
-        padding: 100px 10px 10px;
-        margin: 10px;
-    }
+main {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
