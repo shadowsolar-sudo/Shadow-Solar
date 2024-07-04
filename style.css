@@ -1,0 +1,355 @@
+/* VEŠKERÉ ÚPRAVY */
+
+body {
+    background: linear-gradient(#030003, #692967);
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.nav {
+    text-align: center;
+    font-size: 20px;
+    a {
+        color: rgb(133, 242, 250);
+        text-align: center;
+    }
+    a:hover {
+        color: rgb(14, 255, 14);
+        text-align: center;
+    }
+}
+
+p {
+    font-size: 20px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posun nad prvek */
+    left: 50%;
+    margin-left: -80px; /* Posunutí pro středové zarovnání */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    a {
+        color: aqua;
+    }
+}
+
+/* JEDNOTLIVÉ ÚPRAVY */
+
+.container {
+    color: white;
+    text-align: center;
+}
+
+/* .nav {
+    text-align: center;
+    color: white;
+    .nav a {
+        text-align: center;
+        color: rgb(133, 242, 250);
+    }
+    .a1-nav:hover {
+        color: aqua;
+    }
+} */
+
+#about {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem; /* Přidáme mezery mezi popiskem a obrázky */
+        #about img {
+            max-width: 1000px; /* Maximální šířka obrázků */
+            height: auto;
+            display: block;
+            margin: 1rem auto; /* Horizontální zarovnání fotek */
+        }
+}
+
+#skills {
+    text-align: center;
+    color: white;
+}
+
+#životopis {
+    text-align: center;
+    color: white;
+}
+
+#reference {
+    color: white;
+    text-align: center;
+}
+
+#projects {
+    color: white;
+    text-align: center;
+        .a1-hustle {
+            color: wheat;
+        }
+        .h2-1-hustle:hover {
+            color: rgb(14, 255, 14);
+        }
+        .a1-hustle:hover {
+            color: rgb(14, 255, 14);
+        }
+        .mabrix:hover {
+            color: rgb(14, 255, 14);
+        }
+}
+
+.project {
+    .project-info {
+        a {
+            color: wheat;
+        }
+        .linkos-hw {
+            color: wheat;
+        }
+        .linkos-hw:hover {
+            color: rgb(14, 255, 14);
+        }
+        .linkos-hw-bot {
+            color: wheat;
+        }
+        .linkos-hw-bot:hover {
+            color: rgb(14, 255, 14);
+        }
+        .btn {
+            color: white;
+        }
+    }
+}
+
+#contact {
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem; /* Přidáme mezery mezi popiskem a obrázky */
+        #about img {
+            max-width: 1000px; /* Maximální šířka obrázků */
+            height: auto;
+            display: block;
+            margin: 1rem auto; /* Horizontální zarovnání fotek */
+        }
+        a {
+            color: wheat;
+        }
+        .linkos-hw-contact {
+            color: wheat;
+        }
+        .linkos-hw-contact:hover {
+            color: rgb(14, 255, 14);
+        }
+}
+#h2-contact {
+    color: white;
+    text-align: center;
+    a {
+        color: white;
+        text-align: center;
+    }
+}
+
+#contact-discord {
+    color: white;
+    text-align: center;
+   /* .test {
+        border-radius: 12px;
+        background-color: wheat;
+        color: black;
+        border: 2px solid black;
+    } */
+}
+/* #contact-discord .test:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(14, 255, 14);
+    color: black;
+} */    
+#contact-servers {
+    color: white;
+    text-align: center;
+}
+#contact-web {
+    color: white;
+    text-align: center;
+}
+
+#about {
+    font-size: 20px;
+}
+
+.container-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container-form form {
+    display: flex;
+    flex-direction: column;
+}
+.container-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: black;
+}
+.container-form input[type="text"],
+.container-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.container-form textarea {
+    resize: vertical;
+}
+.container-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.container-form button:hover {
+    background-color: #0056b3;
+}
+.container-form button:focus {
+    outline: none;
+}
+
+
+
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    z-index: 1; /* Ensure the sidebar is above the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out elements to push the footer to the bottom */
+    .tooltip {
+        color: aqua;
+        text-decoration: underline;
+    }
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the links horizontally */
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 0; /* Only vertical padding */
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    width: 100%; /* Make links take full width */
+    text-align: center; /* Center align text inside the links */
+    margin-bottom: 0; /* Remove margin bottom for all links */
+}
+
+.sidebar a.active {
+    background-color: #555;
+    text-decoration: underline; /* Underline the text for the active link */
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+.sidebar p {
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Add padding for spacing */
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.content {
+    margin-left: 220px; /* Offset the content by the width of the sidebar + some gap */
+    padding: 20px;
+}
+
+
+
+#online-users {
+    font-size: 24px;
+    color: white;
+}
+
+
+
+main {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#server-info {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#server-info th, #server-info td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    color: black; /* Ensure the text inside the table is black */
+}
+
+#server-info th {
+    background-color: #f2f2f2;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
