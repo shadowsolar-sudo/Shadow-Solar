@@ -1,82 +1,151 @@
-    <!DOCTYPE html>
-    <html lang="cs">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ShadowSolar</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="img/logo.png" type="image/png">
-        <!-- Přidání Google Fonty -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <script src="scripts/sidebar-activite.js"></script>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png" type="image/png">
+     <!-- Přidání Google Fonty -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+     <script src="scripts/sidebar-activite.js"></script>
+</head>
+<body>
 
+    <div class="sidebar">
+        <nav>
+            <a href="index.html" id="home">Domov</a>
+            <a href="projects.html" id="projects">Projekty</a>
+            <a href="contact.html" id="contact">Kontakt</a>
+        </nav>
+        <p>&copy; 2024 <a class="tooltip" href="https://discord.com/users/797019251336675369" target="_blank">shadowsolar_.#0000
+            <span class="tooltiptext">Tohle je link na discord profile</span>
+        </a></p>
+    </div>
 
-        <div class="sidebar">
-            <nav>
-                <a href="index.html" id="home">Domov</a>
-                <a href="projects.html" id="projects">Projekty</a>
-                <a href="contact.html" id="contact">Kontakt</a>
-            </nav>
-            <p>&copy; 2024 <a class="tooltip" href="https://discord.com/users/797019251336675369" target="_blank">shadowsolar_.#0000
-                <span class="tooltiptext">Tohle je link na discord profile</span>
-            </a></p>
+    <div class="content">
+    <header>
+        <div class="container">
+            <h1>Projekty</h1>
         </div>
+    </header>
+    <main>
+        <section id="projects">
+            <h2 class="h2-1-hustle"><a class="a1-hustle" href="https://dsc.gg/hustleworld" target="_blank">Hustel World</a></h2>
+            <div class="project">
+                <img src="img/hustle_world_gif.gif" alt="Hustle World Discord Server">
+                <div class="project-info">
+                    <h3>Hustle World - Discord server</h3>
+                    <p>Hustle World je Discord server vytvořený pro komunitu programátorů, techniků a lidí, kteří se chtějí zapojit do takových aktivit. Na serveru se sdílí nápady a strategie a členové se navzájem podporují ve svých podnikatelských snahách.</p>
+                    <p>Projekt vytvořen ve spolupráci s <a class="mabrix" href="https://discord.com/users/1151596060666499153" target="_blank">mabrixxx#0000</a>, majitelem/spolumajitel serveru.</p>
+                    <a class="btn">Pro připojení</a><a class="linkos-hw" href="https://dsc.gg/hustleworld" target="_blank">klikněte zde</a> nebo na název Hustle World </a>
+                    
+
+                    <table id="server-info">
+                        <tr>
+                            <th colspan="2" class="section-title" id="online-users">Loading...</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="section-title">Leaders</th>
+                        </tr>
+                        <tbody id="leaders-list">
+                            <tr>
+                                <td>Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+             <h2 class="h2-1-hustle"><a class="a1-hustle" href="https://dsc.gg/securitybotcentrum" target="_blank">Hustel World</a></h2>
+            <div class="project">
+                <img src="img/securtiybot cetral.gif" alt="Security Bot Centrum">
+                <div class="project-info">
+                    <h3>Security Bot Centrum - Discord server</h3>
+                    <p>Security Bot Centrum je Discord server vytvořený za účelem ochrany jiných Discord serverů pomocí bota.</p>
+                    <p>Projekt vytvořen uživatelem<a class="mabrix" href="https://discord.com/users/797019251336675369" target="_blank">shadowsolar_.#0000</a>, majitelem/spolumajitel serveru.</p>
+                    <a class="btn">Pro připojení</a><a class="linkos-hw" href="https://dsc.gg/securitybotcentrum" target="_blank">klikněte zde</a> nebo na název Hustle World </a>
+
+                    <script>
+                        const discordServerID = '1244022932485967893';
+                        const leaderRoleID = '1244024529039134875'; // Replace this with the actual role ID for leaders
+                    
+                        async function getDiscordServerInfo() {
+                            try {
+                                const response = await fetch(`https://discord.com/api/guilds/${discordServerID}/widget.json`);
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                const data = await response.json();
+                    
+                                // Update online users count
+                                if (data.presence_count !== undefined) {
+                                    document.getElementById('online-users').innerText = `Online users: ${data.presence_count}`;
+                                } else {
+                                    document.getElementById('online-users').innerText = 'Online users: 0';
+                                }
+                    
+                                // Update leaders list
+                                const leadersList = document.getElementById('leaders-list');
+                                leadersList.innerHTML = '';
+                    
+                                const leaders = data.members.filter(member => {
+                                    // Check if member has the leader role
+                                    return member.roles && member.roles.includes(leaderRoleID);
+                                });
+                    
+                                if (leaders.length > 0) {
+                                    leaders.forEach(leader => {
+                                        const row = document.createElement('tr');
+                                        const cell = document.createElement('td');
+                                        cell.textContent = leader.username;
+                                        row.appendChild(cell);
+                                        leadersList.appendChild(row);
+                                    });
+                                } else {
+                                    const row = document.createElement('tr');
+                                    const cell = document.createElement('td');
+                                    cell.textContent = 'No leaders online';
+                                    row.appendChild(cell);
+                                    leadersList.appendChild(row);
+                                }
+                            } catch (error) {
+                                console.error('Error fetching Discord data:', error);
+                                document.getElementById('online-users').innerText = 'Error loading data';
+                                document.getElementById('leaders-list').innerHTML = '<tr><td>Error loading data</td></tr>';
+                            }
+                        }
+                    
+                        document.addEventListener('DOMContentLoaded', getDiscordServerInfo);
+                    </script>
+                    
+                    
 
 
-
-        <header>
-            <div class="content">
-            <div class="container">
-                <h1>ShadowSolar</h1>
-            </div>
-            <!-- <nav class="nav">
-                <a class="a1-nav" href="index.html">Domovská stránka</a>
-                <a class="a1-nav" href="projects.html">Projekty</a>
-                <a class="a1-nav" href="contact.html">Kontakt</a>
-            </nav> -->
-            </div>
-        </header>
-        <main>
-        <div class="content"> 
-            <section id="about">
-                <h2>O mně</h2>
-                <p>Jsem vývojář s vášní pro vytváření inovativních webových stránek ale i pro různé programy</p>
-                <p>Moje fotografie práce</p>
-                <h3>1. Programování tohoto webu</h3>
-                <img src="img/tento-web.png" alt="Tento web">
-                <h3>2. Programování programů</h3>
-                <div class="image-container">
-                    <img src="img/discord-mass-dm.png" alt="discord mass dm">
-                    <img src="img/discord-bot.png" alt="discord bot">
                 </div>
-            </section>
-        </div>
-        <div class="content">
-            <section id="životopis">
-                <h2>Moje cesta</h2>
-                <p>Programuji už od osmé třídy, což je už rok a půl. Za tu dobu jsem vytvořil několik webových stránek, bota pro aplikaci Discord a různé další programy. Kromě toho jsem se věnoval i osobním projektům, které mi pomohly zdokonalit mé programovací dovednosti. Neustále se učím nové technologie a postupy, abych mohl své projekty posouvat na vyšší úroveň.</p>
-            </section>
-        </div> 
-        <div class="content">
-            <section id="skills">
-                <h2>Dovednosti</h2>
-                <p>Moje dovednosti jsou takové lehké.<br><br>Umím</p>
-                <p>HTML & CSS</p>
-                <!-- <p>JavaScript</p> -->
-                <p>Python</p>
             </div>
-            </section>
-        </main>
-        <footer>
-            <!--<div class="content">
-            <p>&copy; 2024 <a class="tooltip" href="https://discord.com/users/797019251336675369" target="_blank">shadowsolar_.#0000
-                <span class="tooltiptext">Tohle je link na discord profile</span>
-            </a></p>
-            </div>-->
-        </footer>
-    </body>
-    </html>
+            <br> <br>
+            <div class="project">
+                <img src="discord_bots.jpg" alt="Vývoj Discord Botů a Programů">
+                <div class="project-info">
+                    <h3>Vývoj Discord Botů a Programů</h3>
+                    <p>Vytváření užitečných botů a programů pro Discord platformu, které pomáhají spravovat a zlepšovat uživatelskou zkušenost.</p>
+                    <p>Projekt zaměřen na vývoj botů na zakázku pro různé Discord servery.</p>
+                    <a class="btn">Pro vývoj Bota na Discord Server <a class="linkos-hw-bot" href="https://dsc.gg/hustleworld" target="_blank">klikněte zde</a></a>
+                </div>
+            </div>
+
+            <!-- Další projekty -->
+        </section>
+    </main>
+    <footer>
+        <!--<div class="content">
+        <p>&copy; 2024 <a class="tooltip" href="https://discord.com/users/797019251336675369" target="_blank">shadowsolar_.#0000
+            <span class="tooltiptext">Tohle je link na discord profile</span>
+        </a></p>
+        </div>-->
+    </footer>
+    </div>
+</body>
+</html>
+
